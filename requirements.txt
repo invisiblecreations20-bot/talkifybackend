@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+numpy
+soundfile
+scipy
+scikit-learn
+joblib
+transformers
+torch
+noisereduce
+python-multipart
+python_speech_features

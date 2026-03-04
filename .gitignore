@@ -1,0 +1,13 @@
+.env
+venv_new/
+Lib/
+Scripts/
+__pycache__/
+storage/
+temp_audio/
+uploads/
+*.pyc
+*.pyo
+*.pyd
+*.db
+dataset/
