@@ -44,10 +44,13 @@ W2V_MODEL_NAME = os.getenv("W2V_MODEL_NAME", "facebook/wav2vec2-base")
 CLASSIFIER_PATH = os.getenv("CLASSIFIER_PATH", "models/gender_classifier.joblib")
 
 # === Cloudinary & Auth backend config (from your auth logs) ===
-CLOUDINARY_CLOUD_NAME = os.getenv("CLOUDINARY_CLOUD_NAME", "dbzglmrhi")
-CLOUDINARY_API_KEY = os.getenv("CLOUDINARY_API_KEY", "267732418135814")
-CLOUDINARY_API_SECRET = os.getenv("CLOUDINARY_API_SECRET", "8sUCcEFSS2l62SBU6NE56Japveg")
-AUTH_BACKEND_URL = os.getenv("AUTH_BACKEND_URL", "https://api.talkifyapp.in/")
+CLOUDINARY_CLOUD_NAME = os.getenv("CLOUDINARY_CLOUD_NAME")
+CLOUDINARY_API_KEY = os.getenv("CLOUDINARY_API_KEY")
+CLOUDINARY_API_SECRET = os.getenv("CLOUDINARY_API_SECRET")
+
+VOICE_SYNC_SECRET = os.getenv("VOICE_SYNC_SECRET")
+
+AUTH_BACKEND_URL = os.getenv("AUTH_BACKEND_URL")
 
 # Configure cloudinary (will use provided values)
 try:
@@ -406,7 +409,7 @@ async def verify_voice(
                             "voice_sample": voice_url
                         },
                         headers={
-                            "x-internal-secret": "VOICE_SYNC_SECRET",
+                            "x-internal-secret": VOICE_SYNC_SECRET,
                             "Content-Type": "application/json"
                         },
                         timeout=5
