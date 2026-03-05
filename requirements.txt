@@ -1,7 +1,7 @@
 fastapi
 uvicorn[standard]
 python-dotenv
-numpy
+numpy<2
 soundfile
 scipy
 scikit-learn
@@ -13,3 +13,4 @@ noisereduce
 python-multipart
 python_speech_features
 cloudinary
+requests
